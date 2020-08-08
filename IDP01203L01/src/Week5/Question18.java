@@ -32,7 +32,7 @@ public class Question18 {
         System.out.println("Please enter the exam mark: ");
         examMark = in.nextDouble();
         
-        // Calculate the total mark
+        // Calculate the total mark and total coursework
         testPercentage = (testMark / 50) * 15;
         quizPercentage = (quizMark / 20) * 5;
         assignmentPercentage = (assignmentMark / 40) * 10;
