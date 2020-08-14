@@ -17,13 +17,14 @@ public class Tutorial3Question5 {
     public static void main(String[] args) {
         int stop = 0;
         int time24, hour24, hour12, minutes;
-        String meridiem;
+        String meridiem, minuteString;
         
         // The scanner object for input
         Scanner in = new Scanner(System.in);
         
         while (stop == 0) {
             // Prompt for and get the time in 24 hour
+            System.out.println("Please enter the time in 24-hour format");
             time24 = in.nextInt();
             
             if (time24 == 9999) {
@@ -39,7 +40,13 @@ public class Tutorial3Question5 {
                     hour12 = hour24 - 12;
                 }
                 minutes = time24 - (hour24 * 100);
-                System.out.println("The time in 12-hour format is " + hour12 + "." + minutes + meridiem);
+                // Format the minutes
+                if (minutes < 10) {
+                    minuteString = "0" + minutes;
+                } else {
+                    minuteString = String.valueOf(minutes);
+                }
+                System.out.println("The time in 12-hour format is " + hour12 + "." + minuteString + meridiem);
             }
         }
     }
