@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Week6;
+package Week7;
 import java.util.*;
 /**
  * Design an algorithm that will prompt for, receive and total a collection of

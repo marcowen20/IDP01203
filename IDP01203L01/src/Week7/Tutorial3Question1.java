@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Week6;
-import java.util.*;
+package Week7;
 /**
  * Design an algorithm that will output the five times table
  * @author Marc Owen Rentap

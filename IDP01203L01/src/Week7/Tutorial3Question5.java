@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Week6;
+package Week7;
 import java.util.*;
 /**
  * Design an algorithm that will prompt for and receive the time expressed in
@@ -46,7 +46,7 @@ public class Tutorial3Question5 {
                 } else {
                     minuteString = String.valueOf(minutes);
                 }
-                System.out.println("The time in 12-hour format is " + hour12 + "." + minuteString + meridiem);
+                System.out.println("The time in 12-hour format is " + hour12 + "." + minuteString + " " + meridiem);
             }
         }
     }
