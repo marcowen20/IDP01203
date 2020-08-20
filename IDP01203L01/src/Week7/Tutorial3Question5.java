@@ -32,10 +32,16 @@ public class Tutorial3Question5 {
             } else {
                 hour24 = time24 / 100;
                 
-                if (hour24 < 12) {
+                if  (hour24 == 0) {
+                    meridiem = "a.m.";
+                    hour12 = 12;
+                }else if (hour24 == 12){
+                    meridiem = "p.m.";
+                    hour12 = hour24;
+                }else if (hour24 < 12) {
                     meridiem = "a.m.";
                     hour12 = hour24;
-                } else {
+                }else {
                     meridiem = "p.m.";
                     hour12 = hour24 - 12;
                 }
