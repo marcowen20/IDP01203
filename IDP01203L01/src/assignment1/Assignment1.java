@@ -2,7 +2,7 @@ package assignment1;
 import java.util.*; // Import the additional libraries for the Scanner class
 /**
  * === RESULT SLIP GENERATOR ===
- * By entering the final exam and coursework in for a specified student, it
+ * By entering the exam and coursework in for a specified student, it
  * generates a result slip by determining the point value and
  * PASS/FAIL status and calculating the grade point, GPA and CGPA.
  * 
@@ -14,8 +14,8 @@ import java.util.*; // Import the additional libraries for the Scanner class
  * Lecturer : Dr. Azizah Rahmat
  * 
  * == Note ==
- * - Users will input the final exam and coursework marks out of 100%, but the
- *   total mark is calculated based on the 50% final exam and 50% coursework*
+ * - Users will input the exam and coursework marks out of 100%, but the
+ *   total mark is calculated based on the 50% exam and 50% coursework*
  *   proportion
  * - This version is designed **only** to generate the result slip of students
  *   who are enrolled in Semester 1 of the Pre-Korea program.
@@ -44,51 +44,68 @@ public class Assignment1 {
         System.out.print("Student ID\t: ");
         // Get student ID
         String studentID = in.nextLine();
-        
-        // Display the student information for the user to confirm in case of
-        // wrongly inputted student name or student id.
-        System.out.println(studentName);
-        System.out.println("\n---------");
-        System.out.println("Entering results for");
-        System.out.println(studentName + " " + studentID);
-        System.out.println("Pre-Korea Semester 1");
-        
-        // Display the registered courses list for the student
-        System.out.println("\nRegistered courses:");
-        System.out.println(
-                "┌---┬-----------┬---------------------------------------------┐\n" +
-                "│ # │ Course ID │ Course Name                                 │\n" +
-                "├---┼-----------┼---------------------------------------------┤\n" +
-                "│ 1 │ IDP01103  │ Introduction to PC Hardware and Maintenance │\n" +
-                "│ 2 │ IDP01203  │ Principles of Programming                   │\n" +
-                "│ 3 │ IDP06904  │ Korean Language 1                           │\n" +
-                "│ 4 │ IDP07004  │ Korean Communication 1                      │\n" +
-                "│ 5 │ IDP07104  │ Calculus 1                                  │\n" +
-                "│ 6 │ IDP07202  │ Introduction to Intercultural Communication │\n" +
-                "└---┴-----------┴---------------------------------------------┘");
+        // Prompt for field of study
+        System.out.println("1: Foundation in Animation for Korean University  2: Foundation in Animation for Korean University");
+        System.out.print("Field of Study\t: ");
+        // Get field of study
+        int fieldOfStudy = in.nextInt();
         
         // Define the name and ID of each course for display
-        final String COURSE1NAME = "Introduction to PC Hardware and Maintenance";
-        final String COURSE1ID = "IDP01103";
-        final String COURSE2NAME = "Principles of Programming";
-        final String COURSE2ID = "IDP01203";
-        final String COURSE3NAME = "Korean Language 1";
-        final String COURSE3ID = "IDP06904";
-        final String COURSE4NAME = "Korean Communication 1";
-        final String COURSE4ID = "IDP07004";
-        final String COURSE5NAME = "Calculus 1";
-        final String COURSE5ID = "IDP07104";
-        final String COURSE6NAME = "Introduction to Intercultural Communication";
-        final String COURSE6ID = "IDP07202";
-        
+        // Initialize the course names and IDs
+        String COURSE1NAME = "", COURSE1ID = "", COURSE2NAME = "", COURSE2ID = "",
+                COURSE3NAME = "", COURSE3ID = "", COURSE4NAME = "", COURSE4ID = "",
+                COURSE5NAME = "", COURSE5ID = "", COURSE6NAME = "", COURSE6ID = "", fieldOfStudyName = "";
+
         // Define the course credits of each course 
-        final Double COURSE1CREDITS = 3.0;
-        final Double COURSE2CREDITS = 3.0;
-        final Double COURSE3CREDITS = 4.0;
-        final Double COURSE4CREDITS = 4.0;
-        final Double COURSE5CREDITS = 4.0;
-        final Double COURSE6CREDITS = 2.0;
-        final Double TOTALCREDITS = COURSE1CREDITS + COURSE2CREDITS + COURSE3CREDITS +
+        Double COURSE1CREDITS = 0.0, COURSE2CREDITS = 0.0, COURSE3CREDITS = 0.0,
+                COURSE4CREDITS = 0.0, COURSE5CREDITS = 0.0, COURSE6CREDITS = 0.0;
+        
+        if (fieldOfStudy == 1) {
+            COURSE1NAME = "Introduction to PC Hardware and Maintenance";
+            COURSE1ID = "IDP01103";
+            COURSE2NAME = "Principles of Programming";
+            COURSE2ID = "IDP01203";
+            COURSE3NAME = "Korean Language 1";
+            COURSE3ID = "IDP06904";
+            COURSE4NAME = "Korean Communication 1";
+            COURSE4ID = "IDP07004";
+            COURSE5NAME = "Calculus 1";
+            COURSE5ID = "IDP07104";
+            COURSE6NAME = "Introduction to Intercultural Communication";
+            COURSE6ID = "IDP07202";
+            fieldOfStudyName = "Foundation in Animation for Korean University";
+
+            // Define the course credits of each course 
+            COURSE1CREDITS = 3.0;
+            COURSE2CREDITS = 3.0;
+            COURSE3CREDITS = 4.0;
+            COURSE4CREDITS = 4.0;
+            COURSE5CREDITS = 4.0;
+            COURSE6CREDITS = 2.0;
+        } else if (fieldOfStudy == 2) {
+            COURSE1NAME = "Introduction to PC Hardware and Maintenance";
+            COURSE1ID = "IDP01103";
+            COURSE2NAME = "Korean Language 1";
+            COURSE2ID = "IDP06904";
+            COURSE3NAME = "Korean Communication 1";
+            COURSE3ID = "IDP07004";
+            COURSE4NAME = "Introduction to Intercultural Communication";
+            COURSE4ID = "IDP07202";
+            COURSE5NAME = "Cinematic Language and Appreciation";
+            COURSE5ID = "IDP07303";
+            COURSE6NAME = "Basic Drawing";
+            COURSE6ID = "IDP08704";
+            fieldOfStudyName = "Foundation in Animation for Korean University";
+
+            // Define the course credits of each course 
+            COURSE1CREDITS = 3.0;
+            COURSE2CREDITS = 4.0;
+            COURSE3CREDITS = 4.0;
+            COURSE4CREDITS = 2.0;
+            COURSE5CREDITS = 3.0;
+            COURSE6CREDITS = 4.0;
+        }
+        Double TOTALCREDITS = COURSE1CREDITS + COURSE2CREDITS + COURSE3CREDITS +
                 COURSE4CREDITS + COURSE5CREDITS + COURSE6CREDITS;
         
         // Initialize course-related variables for calculation and display
@@ -102,6 +119,14 @@ public class Assignment1 {
                 course3Grade = "", course3Status = "", course4Grade = "", course4Status = "",
                 course5Grade = "", course5Status = "", course6Grade = "", course6Status = "";
         
+        // Display the student information for the user to confirm in case of
+        // wrongly inputted student name or student id.
+        System.out.println(studentName);
+        System.out.println("\n---------");
+        System.out.println("Entering results for");
+        System.out.println(studentName + " " + studentID);
+        System.out.println(fieldOfStudyName + "\n");
+        
         // Start asking for the user to input
         System.out.println("Please enter the marks out of 100%");
         
@@ -112,7 +137,7 @@ public class Assignment1 {
         /*
         The input loop
         Loop 6 times; In each iteration, ask the user to input a coursework mark
-        and final exam mark. Then, assign the inputted values to the respective
+        and exam mark. Then, assign the inputted values to the respective
         course variable. 
         */
         for (int i = 1; i <= 6; i++) {
@@ -160,9 +185,9 @@ public class Assignment1 {
             System.out.print("Coursework\t: ");
             // Get the coursework mark of the ith course. Adjusted for 50%-50%
             Double coursework = in.nextDouble() / 2;
-            // Prompt for the final exam mark of the ith course. Adjusted for 50%-50%
+            // Prompt for the exam mark of the ith course. Adjusted for 50%-50%
             System.out.print("Final exam\t: ");
-            // Get the final exam mark of the ith course
+            // Get the exam mark of the ith course
             Double finalExam = in.nextDouble() / 2;
             
             // Calculate the total mark of the ith course
@@ -213,7 +238,7 @@ public class Assignment1 {
             
             /*
             Assign the calculated total mark, grade, point value, PASS/FAIL
-            status, coursework mark and final exam mark of the ith course to the
+            status, coursework mark and exam mark of the ith course to the
             respective course-related variables.
             */
             switch(i){
@@ -318,7 +343,7 @@ public class Assignment1 {
         Header
         Display the UniKL logo, campus name and the slip title
         */
-        System.out.println("═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
+        System.out.println("\n══════════════════════════════════════════════════════════════════════════════════════════════════════════");
         System.out.println(
         "  _   _       _ _  ___                                                          \n"+
         " | | | |_ __ (_) |/ / |     Malaysian Institute of Information Technology       \n"+
@@ -330,12 +355,12 @@ public class Assignment1 {
         Student Info
         Display the student name, student ID, program and semester
         */
-        System.out.println("═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
+        System.out.println("══════════════════════════════════════════════════════════════════════════════════════════════════════════");
         System.out.println("Name\t\t: " + studentName);
         System.out.println("ID\t\t: " + studentID);
-        System.out.println("Program\t\t: Pre-Korea");
+        System.out.println("Program\t\t: " + fieldOfStudy);
         System.out.println("Semester\t: 1");
-        System.out.println("═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
+        System.out.println("══════════════════════════════════════════════════════════════════════════════════════════════════════════");
         
         /*
         Table header
@@ -344,7 +369,7 @@ public class Assignment1 {
         Abbreviations:
         CrHr = Credit Hour, C. work = Coursework, Total Pt. = Total points
         */
-        System.out.println("#\tCourseID\tCourse Name\t\t\t\t\tCrHr\tGrade\tPoints\tC.work\tFinal\tTotal\tStatus\tTotal Pt.");
+        System.out.println("#\tCourseID\tCrHr\tGrade\tPoints\tC.work\tFinal\tTotal\tStatus\tTotal Pt.");
         
         /*
         Table Body
@@ -356,11 +381,10 @@ public class Assignment1 {
 
         /*
         Display the course 1 ID, Name, credits, grade, point value
-        coursework, final exam, status and gradepoint.
+        coursework, exam, status and gradepoint.
         */
         System.out.println("1\t" +
                 COURSE1ID + "\t" +
-                COURSE1NAME + "\t" +
                 COURSE1CREDITS + "\t" +
                 course1Grade + "\t" + 
                 course1PointValue + "\t" +
@@ -372,11 +396,10 @@ public class Assignment1 {
         
         /*
         Display the course 2 ID, Name, credits, grade, point value
-        coursework, final exam, status and gradepoint.
+        coursework, exam, status and gradepoint.
         */
         System.out.println("2\t" +
                 COURSE2ID + "\t" +
-                COURSE2NAME + "\t\t\t" +
                 COURSE2CREDITS + "\t" +
                 course2Grade + "\t" + 
                 course2PointValue + "\t" +
@@ -388,11 +411,10 @@ public class Assignment1 {
         
         /*
         Display the course 3 ID, Name, credits, grade, point value
-        coursework, final exam, status and gradepoint.
+        coursework, exam, status and gradepoint.
         */
         System.out.println("3\t" +
                 COURSE3ID + "\t" +
-                COURSE3NAME + "\t\t\t\t" +
                 COURSE3CREDITS + "\t" +
                 course3Grade + "\t" + 
                 course3PointValue + "\t" +
@@ -404,11 +426,10 @@ public class Assignment1 {
         
         /*
         Display the course 4 ID, Name, credits, grade, point value
-        coursework, final exam, status and gradepoint.
+        coursework, exam, status and gradepoint.
         */
         System.out.println("4\t" +
                 COURSE4ID + "\t" +
-                COURSE4NAME + "\t\t\t\t" +
                 COURSE4CREDITS + "\t" +
                 course4Grade + "\t" + 
                 course4PointValue + "\t" +
@@ -420,11 +441,10 @@ public class Assignment1 {
         
         /*
         Display the course 5 ID, Name, credits, grade, point value
-        coursework, final exam, status and gradepoint.
+        coursework, exam, status and gradepoint.
         */
         System.out.println("5\t" +
                 COURSE5ID + "\t" +
-                COURSE5NAME + "\t\t\t\t\t" +
                 COURSE5CREDITS + "\t" +
                 course5Grade + "\t" + 
                 course5PointValue + "\t" +
@@ -436,11 +456,10 @@ public class Assignment1 {
         
         /*
         Display the course 6 ID, Name, credits, grade, point value
-        coursework, final exam, status and gradepoint.
+        coursework, exam, status and gradepoint.
         */
         System.out.println("6\t" +
                 COURSE6ID + "\t" +
-                COURSE6NAME + "\t" +
                 COURSE6CREDITS + "\t" +
                 course6Grade + "\t" + 
                 course6PointValue + "\t" +
@@ -454,10 +473,10 @@ public class Assignment1 {
         Result
         Display the total total credits, total gradepoint, GPA and CGPA
         */
-        System.out.println("═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
+        System.out.println("══════════════════════════════════════════════════════════════════════════════════════════════════════════");
         Double totalGradePoint = course1GradePoint + course2GradePoint + course3GradePoint + course4GradePoint + course5GradePoint + course6GradePoint;
-        System.out.println("Total\t\t\t\t\t\t\t\t\t" + TOTALCREDITS + "\t\t\t\t\t\t\t" + String.format("%.2f", totalGradePoint));
+        System.out.println("Total\t\t\t" + TOTALCREDITS + "\t\t\t\t\t\t\t" + String.format("%.2f", totalGradePoint));
         System.out.println("GPA: " + String.format("%.2f", GPA) + "\tCGPA: " + String.format("%.2f", CGPA));
-        System.out.println("═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
+        System.out.println("══════════════════════════════════════════════════════════════════════════════════════════════════════════");
     } // End of main function
 } // End of class
