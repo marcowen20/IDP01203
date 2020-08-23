@@ -50,7 +50,6 @@ public class Assignment1 {
         // Get field of study
         int fieldOfStudy = in.nextInt();
         
-        // Define the name and ID of each course for display
         // Initialize the course names and IDs
         String COURSE1NAME = "", COURSE1ID = "", COURSE2NAME = "", COURSE2ID = "",
                 COURSE3NAME = "", COURSE3ID = "", COURSE4NAME = "", COURSE4ID = "",
@@ -60,6 +59,7 @@ public class Assignment1 {
         Double COURSE1CREDITS = 0.0, COURSE2CREDITS = 0.0, COURSE3CREDITS = 0.0,
                 COURSE4CREDITS = 0.0, COURSE5CREDITS = 0.0, COURSE6CREDITS = 0.0;
         
+        // Define the name and ID of each course for display
         if (fieldOfStudy == 1) {
             COURSE1NAME = "Introduction to PC Hardware and Maintenance";
             COURSE1ID = "IDP01103";
@@ -105,6 +105,8 @@ public class Assignment1 {
             COURSE5CREDITS = 3.0;
             COURSE6CREDITS = 4.0;
         }
+        
+        // Calculate the total credits
         Double TOTALCREDITS = COURSE1CREDITS + COURSE2CREDITS + COURSE3CREDITS +
                 COURSE4CREDITS + COURSE5CREDITS + COURSE6CREDITS;
         
@@ -131,8 +133,7 @@ public class Assignment1 {
         System.out.println("Please enter the marks out of 100%");
         
         // Initialize input variables
-        String courseName = "";
-        String courseID = "";
+        String courseName = "", courseID = "";
         
         /*
         The input loop
