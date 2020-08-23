@@ -73,7 +73,7 @@ public class Assignment1 {
             COURSE5ID = "IDP07104";
             COURSE6NAME = "Introduction to Intercultural Communication";
             COURSE6ID = "IDP07202";
-            fieldOfStudyName = "Foundation in Animation for Korean University";
+            fieldOfStudyName = "Foundation in Science and Technology for Korean University";
 
             // Define the course credits of each course 
             COURSE1CREDITS = 3.0;
