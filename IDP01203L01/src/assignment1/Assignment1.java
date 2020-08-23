@@ -123,7 +123,6 @@ public class Assignment1 {
         
         // Display the student information for the user to confirm in case of
         // wrongly inputted student name or student id.
-        System.out.println(studentName);
         System.out.println("\n---------");
         System.out.println("Entering results for");
         System.out.println(studentName + " " + studentID);
