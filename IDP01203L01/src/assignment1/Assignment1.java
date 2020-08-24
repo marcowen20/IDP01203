@@ -45,7 +45,7 @@ public class Assignment1 {
         // Get student ID
         String studentID = in.nextLine();
         // Prompt for field of study
-        System.out.println("1: Foundation in Animation for Korean University  2: Foundation in Animation for Korean University");
+        System.out.println("1: Computer Science  2: Animation");
         System.out.print("Field of Study\t: ");
         // Get field of study
         int fieldOfStudy = in.nextInt();
@@ -73,7 +73,7 @@ public class Assignment1 {
             COURSE5ID = "IDP07104";
             COURSE6NAME = "Introduction to Intercultural Communication";
             COURSE6ID = "IDP07202";
-            fieldOfStudyName = "Foundation in Science and Technology for Korean University";
+            fieldOfStudyName = "Computer Science";
 
             // Define the course credits of each course 
             COURSE1CREDITS = 3.0;
@@ -95,7 +95,7 @@ public class Assignment1 {
             COURSE5ID = "IDP07303";
             COURSE6NAME = "Basic Drawing";
             COURSE6ID = "IDP08704";
-            fieldOfStudyName = "Foundation in Animation for Korean University";
+            fieldOfStudyName = "Animation";
 
             // Define the course credits of each course 
             COURSE1CREDITS = 3.0;
